@@ -3,96 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>স্বপ্ন ১৮ বছর পূর্তি উপহার</title>
+    <title>স্বপ্ন ১৮ বছর পূর্তি অফার</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS Coding */
+        /* প্রফেশনাল ডিজাইন */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background: #f0f2f5; color: #333; }
+        body { background: #f4f4f7; color: #333; overflow-x: hidden; }
 
-        header { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo { height: 40px; }
-        
-        .banner-container { width: 100%; display: flex; flex-direction: column; }
-        .banner-container img { width: 100%; height: auto; border-bottom: 2px solid #e31e24; }
-        
-        .announcement { background: #e31e24; color: white; padding: 15px; text-align: center; font-weight: bold; }
+        /* হেডার ও লোগো */
+        header { background: #fff; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e31e24; sticky: top; z-index: 1000; }
+        .logo { height: 45px; }
 
-        .card { background: white; margin: 20px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
-        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-        
-        .opt-btn { padding: 15px; background: #e31e24; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .opt-btn:active { transform: scale(0.95); }
+        /* হোম পেজ ব্যানার (তোমার দেওয়া ছবি) */
+        .banner-box { width: 100%; background: #fff; }
+        .banner-box img { width: 100%; height: auto; display: block; }
 
-        .live-winners { margin: 20px; background: white; border-radius: 12px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .winner-item { border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: space-between; font-size: 14px; }
-        .winner-item span { color: green; font-weight: bold; }
+        /* প্রফেশনাল পপ-আপ */
+        #popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 2000; }
+        .popup-content { background: white; padding: 25px; border-radius: 15px; text-align: center; width: 85%; max-width: 400px; border: 3px solid #e31e24; }
+        .popup-content h2 { color: #e31e24; margin-bottom: 10px; }
+        .popup-btn { background: #e31e24; color: white; padding: 10px 25px; border: none; border-radius: 5px; font-weight: bold; margin-top: 15px; cursor: pointer; }
 
-        .share-section { display: none; }
+        /* কুইজ কার্ড */
+        .card { background: white; margin: 15px; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .opt-btn { padding: 12px; background: #e31e24; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; }
+
+        /* রিয়েলিস্টিক কমেন্ট/উইনার লিস্ট */
+        .winner-section { background: white; margin: 15px; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .winner-section h4 { border-bottom: 2px solid #f0f0f0; padding-bottom: 80px; margin-bottom: 10px; font-size: 16px; color: #e31e24; }
+        .winner-item { padding: 12px 0; border-bottom: 1px solid #f9f9f9; display: flex; align-items: center; gap: 10px; }
+        .user-img { width: 40px; height: 40px; border-radius: 50%; background: #eee; }
+        .winner-info p { font-size: 13px; line-height: 1.4; }
+        .winner-info b { color: #000; }
+        .amount { color: #28a745; font-weight: bold; }
+        .time { font-size: 11px; color: #999; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" alt="Shwapno" class="logo">
-        <div style="color: #e31e24; font-weight: bold;"><i class="fas fa-bars"></i></div>
-    </header>
-
-    <div class="banner-container">
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c7553102435423.5f3661be49e9d.jpg" alt="Gift Banner">
-        <div class="announcement">স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে সবাইকে ফ্রি উপহার দেওয়া হচ্ছে!</div>
-    </div>
-
-    <div id="main-area">
-        <div id="quiz-area" class="card">
-            <h3>আপনি কি ১৮ বছরের উপরে?</h3>
-            <div class="options">
-                <button onclick="nextQuestion()" class="opt-btn">হ্যাঁ</button>
-                <button onclick="nextQuestion()" class="opt-btn">না</button>
-            </div>
+    <div id="popup">
+        <div class="popup-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" style="width: 100px; margin-bottom: 10px;">
+            <h2>অভিনন্দন!</h2>
+            <p>স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে আপনি একটি বিশেষ উপহারের জন্য নির্বাচিত হয়েছেন।</p>
+            <button class="popup-btn" onclick="closePopup()">উপহারটি নিন</button>
         </div>
     </div>
 
-    <div class="live-winners">
-        <h4 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">লাইভ বিজয়ীদের তালিকা</h4>
-        <div id="winner-list"></div>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" alt="Shwapno Logo" class="logo">
+        <div style="font-size: 20px; color: #e31e24;"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="banner-box">
+        <img src="https://i.ibb.co/Lkhm7G0/image-46c964.jpg" alt="Home Banner 1">
+        <img src="https://i.ibb.co/vYd8y6M/image-46c980.jpg" alt="Home Banner 2">
+    </div>
+
+    <div class="card" id="quiz-container">
+        <h3>আপনি কি গত ১ বছরে স্বপ্নে কেনাকাটা করেছেন?</h3>
+        <div class="btn-grid">
+            <button class="opt-btn" onclick="showReward()">হ্যাঁ</button>
+            <button class="opt-btn" onclick="showReward()">না</button>
+        </div>
+    </div>
+
+    <div class="winner-section">
+        <h4>লাইভ বিজয়ীদের কমেন্ট ও রিওয়ার্ড</h4>
+        <div id="winner-list">
+            </div>
     </div>
 
     <script>
-        // JavaScript Coding
-        function nextQuestion() {
-            const area = document.getElementById('quiz-area');
-            area.innerHTML = `
-                <h3 style="color: green;">অভিনন্দন!</h3>
-                <p style="margin: 10px 0;">আপনি উপহার জেতার জন্য নির্বাচিত হয়েছেন। নিচের বাটনে ক্লিক করে হোয়াটসঅ্যাপে শেয়ার করুন এবং আপনার পুরস্কার বুঝে নিন।</p>
-                <button onclick="finalStep()" class="opt-btn" style="background: #25D366;">
-                    <i class="fab fa-whatsapp"></i> WhatsApp-এ শেয়ার করুন
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function showReward() {
+            const quiz = document.getElementById('quiz-container');
+            quiz.innerHTML = `
+                <h2 style="color: #28a745;">১০০% কনফার্ম!</h2>
+                <p style="margin: 10px 0;">আপনি পাচ্ছেন <b>৳২,৫০০</b> টাকা বোনাস। টাকাটি সরাসরি আপনার বিকাশ বা নগদে নিতে নিচের বাটনে ক্লিক করে শেয়ার করুন।</p>
+                <button class="opt-btn" style="background: #25D366; width: 100%;" onclick="shareWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> WhatsApp-এ শেয়ার করে টাকা নিন
                 </button>
             `;
         }
 
-        function finalStep() {
-            window.open("whatsapp://send?text=স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে সবাই টাকা পাচ্ছে! আপনিও চেষ্টা করুন: " + window.location.href);
-            alert("কমপক্ষে ৫টি গ্রুপে শেয়ার করার পর পুরস্কারের ফর্মটি আসবে।");
+        function shareWhatsApp() {
+            window.open("whatsapp://send?text=স্বপ্নের ১৮ বছর পূর্তি উপলক্ষে সবাই টাকা পাচ্ছে! আমি পেলাম ২৫০০ টাকা। আপনিও নিন: " + window.location.href);
+            alert("কমপক্ষে ১০ জন বন্ধু বা গ্রুপে শেয়ার করলেই আপনার পেমেন্ট নম্বর দেওয়ার অপশন আসবে।");
         }
 
-        // Live Winner Updates
-        const names = ["Maruf", "Akash", "Sabbir", "Mitu", "Raihan", "Sumon"];
+        // ভিন্ন ভিন্ন ও রিয়েলিস্টিক কমেন্ট লিস্ট
+        const winnerData = [
+            { name: "Sabbir Ahmed", text: "আমি ৫০০ টাকা পেয়েছি, ধন্যবাদ স্বপ্ন!", amount: "৳৫০০" },
+            { name: "Tania Akter", text: "বিশ্বাস করিনি প্রথমে, কিন্তু এখন ১০০০ টাকা পেলাম।", amount: "৳১০০০" },
+            { name: "Maruf Hossain", text: "রেফার করে ২ হাজার টাকা তুলেছি আজ!", amount: "৳২০০০" },
+            { name: "Rakib Khan", text: "অসাধারণ অফার! সবাই ট্রাই করেন।", amount: "৳৫০০০" },
+            { name: "Mitu Islam", text: "আমার পেমেন্ট আসতে ১০ মিনিট লেগেছে, কিন্তু পেয়েছি।", amount: "৳৫০০" },
+            { name: "Jasim Uddin", text: "এই মাত্র ১০০০ টাকা নগদে পেলাম।", amount: "৳১০০০" }
+        ];
+
         const list = document.getElementById('winner-list');
 
-        function addWinner() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const amount = [500, 1000, 2000, 5000][Math.floor(Math.random() * 4)];
+        function addLiveWinner() {
+            const data = winnerData[Math.floor(Math.random() * winnerData.length)];
             const div = document.createElement('div');
             div.className = 'winner-item';
-            div.innerHTML = `<span>${name}***</span> kishui payechen <span>৳${amount}</span>`;
-            
+            div.innerHTML = `
+                <div class="user-img"></div>
+                <div class="winner-info">
+                    <p><b>${data.name}</b>: ${data.text}</p>
+                    <p><span class="amount">${data.amount}</span> <span class="time">তাজা প্রাপ্তি</span></p>
+                </div>
+            `;
             if(list.children.length > 5) list.removeChild(list.lastChild);
             list.prepend(div);
         }
 
-        setInterval(addWinner, 3000);
-        addWinner(); // Initial call
+        setInterval(addLiveWinner, 4000);
+        addLiveWinner();
     </script>
 </body>
 </html>
