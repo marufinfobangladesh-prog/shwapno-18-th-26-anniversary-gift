@@ -3,124 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shwapno Anniversary Gift</title>
+    <title>স্বপ্ন ১৮তম বার্ষিকী উপহার</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f4;
+            text-align: center;
         }
 
-        /* Top Bar - Shwapno Color */
+        /* Header with Official Colors */
         .header {
-            background-color: #ed1c24; /* Red color like Shwapno */
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 180px;
+            height: auto;
         }
 
         .container {
-            max-width: 450px;
-            width: 90%;
-            margin-top: 20px;
+            max-width: 500px;
+            margin: 20px auto;
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .offer-image {
+        /* Anniversary Banner Section */
+        .banner-img {
             width: 100%;
-            height: 200px;
-            background-color: #ffebee;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            color: #ed1c24;
-            font-weight: bold;
-            text-align: center;
-            border-bottom: 2px solid #ed1c24;
+            display: block;
         }
 
         .content {
-            padding: 20px;
-            text-align: center;
+            padding: 25px;
         }
 
-        h2 {
-            color: #333;
-            font-size: 20px;
+        h1 {
+            color: #ed1c24;
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
         p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
+            color: #444;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
-        /* Login Form */
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
+        /* Claim Button */
         .claim-btn {
-            width: 100%;
             background-color: #ed1c24;
             color: white;
-            padding: 12px;
+            padding: 15px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .claim-btn:hover {
+            background-color: #c41212;
+            transform: scale(1.05);
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
+            padding: 20px;
             font-size: 12px;
-            color: #999;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        SHWAPNO 🛒
+        <img src="https://www.shwapno.com/Content/Images/logo.png" alt="Shwapno Official Logo" class="logo">
     </div>
 
     <div class="container">
-        <div class="offer-image">
-            🎁 ১৮ বছর পূর্তি উপলক্ষে <br> বিশেষ উপহার!
+        <div style="background: #003366; padding: 10px;">
+            <img src="https://i.ibb.co/v4vK9tQ/anniversary-banner.jpg" alt="18th Anniversary" class="banner-img" onerror="this.src='https://via.placeholder.com/500x300?text=Shwapno+18th+Anniversary'">
         </div>
+
         <div class="content">
-            <h2>আপনার উপহারটি বুঝে নিন</h2>
-            <p>নিচের বক্সে আপনার তথ্য দিয়ে লগইন করে গিফটটি ক্লেইম করুন।</p>
+            <h1>অভিনন্দন! 🎉</h1>
+            <p>স্বপ্ন-এর ১৮তম বার্ষিকী উপলক্ষে আমরা দিচ্ছি বিশেষ উপহার। আপনার জন্য একটি এক্সক্লুসিভ গিফট বক্স অপেক্ষা করছে!</p>
             
-            <form action="#">
-                <input type="text" placeholder="মোবাইল নম্বর বা ইমেইল" required>
-                <input type="password" placeholder="পাসওয়ার্ড" required>
-                <button type="submit" class="claim-btn">উপহার নিন (Claim Now)</button>
-            </form>
+            <p><strong>আপনার উপহারটি পেতে নিচের বাটনে ক্লিক করুন:</strong></p>
+            
+            <a href="#" class="claim-btn">আপনার উপহার নিন 🎁</a>
         </div>
     </div>
 
     <div class="footer">
-        © 2026 Shwapno Online Service
+        © 2026 Shwapno - Stay Connected With Us
     </div>
 
 </body>
