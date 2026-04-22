@@ -6,72 +6,72 @@
     <title>স্বপ্ন ১৮ বছর পূর্তি অফার</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* প্রফেশনাল ডিজাইন */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background: #f4f4f7; color: #333; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background: #f0f2f5; color: #1c1e21; }
 
-        /* হেডার ও লোগো */
-        header { background: #fff; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e31e24; sticky: top; z-index: 1000; }
-        .logo { height: 45px; }
+        /* হেডার */
+        header { background: #fff; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e31e24; position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 40px; }
 
-        /* হোম পেজ ব্যানার (তোমার দেওয়া ছবি) */
-        .banner-box { width: 100%; background: #fff; }
-        .banner-box img { width: 100%; height: auto; display: block; }
+        /* পপ-আপ ডিজাইন */
+        #popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999; }
+        .popup-card { background: #fff; width: 90%; max-width: 380px; border-radius: 15px; text-align: center; padding: 25px; border-top: 8px solid #e31e24; }
+        .popup-card h2 { color: #e31e24; margin-bottom: 10px; font-size: 24px; }
+        .popup-btn { background: #e31e24; color: #fff; border: none; padding: 12px 30px; border-radius: 25px; font-weight: bold; cursor: pointer; margin-top: 20px; font-size: 16px; }
 
-        /* প্রফেশনাল পপ-আপ */
-        #popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 2000; }
-        .popup-content { background: white; padding: 25px; border-radius: 15px; text-align: center; width: 85%; max-width: 400px; border: 3px solid #e31e24; }
-        .popup-content h2 { color: #e31e24; margin-bottom: 10px; }
-        .popup-btn { background: #e31e24; color: white; padding: 10px 25px; border: none; border-radius: 5px; font-weight: bold; margin-top: 15px; cursor: pointer; }
+        /* ব্যানার */
+        .banner { width: 100%; border-bottom: 3px solid #e31e24; }
+        .banner img { width: 100%; display: block; }
 
-        /* কুইজ কার্ড */
-        .card { background: white; margin: 15px; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .opt-btn { padding: 12px; background: #e31e24; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; }
+        /* কুইজ সেকশন */
+        .card { background: #fff; margin: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .card h3 { font-size: 18px; margin-bottom: 15px; text-align: center; }
+        .btn-box { display: flex; gap: 10px; }
+        .opt-btn { flex: 1; padding: 12px; border: none; border-radius: 6px; background: #e31e24; color: #fff; font-weight: bold; cursor: pointer; font-size: 16px; }
 
-        /* রিয়েলিস্টিক কমেন্ট/উইনার লিস্ট */
-        .winner-section { background: white; margin: 15px; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .winner-section h4 { border-bottom: 2px solid #f0f0f0; padding-bottom: 80px; margin-bottom: 10px; font-size: 16px; color: #e31e24; }
-        .winner-item { padding: 12px 0; border-bottom: 1px solid #f9f9f9; display: flex; align-items: center; gap: 10px; }
-        .user-img { width: 40px; height: 40px; border-radius: 50%; background: #eee; }
-        .winner-info p { font-size: 13px; line-height: 1.4; }
-        .winner-info b { color: #000; }
-        .amount { color: #28a745; font-weight: bold; }
-        .time { font-size: 11px; color: #999; }
+        /* রিয়েল ফেসবুক স্টাইল কমেন্ট */
+        .comment-section { background: #fff; margin: 15px; padding: 15px; border-radius: 8px; }
+        .comment-section h4 { border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; font-size: 15px; color: #606770; }
+        .comment { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #f0f2f5; padding-bottom: 10px; }
+        .avatar { width: 45px; height: 45px; border-radius: 50%; background: #ddd; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; }
+        .comment-body { background: #f0f2f5; padding: 10px 15px; border-radius: 18px; flex: 1; }
+        .comment-body b { font-size: 14px; display: block; margin-bottom: 2px; }
+        .comment-body p { font-size: 14px; color: #1c1e21; line-height: 1.4; }
+        .reward-tag { color: #28a745; font-weight: bold; font-size: 12px; margin-top: 5px; display: block; }
     </style>
 </head>
 <body>
 
     <div id="popup">
-        <div class="popup-content">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" style="width: 100px; margin-bottom: 10px;">
+        <div class="popup-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" style="width: 80px;">
             <h2>অভিনন্দন!</h2>
-            <p>স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে আপনি একটি বিশেষ উপহারের জন্য নির্বাচিত হয়েছেন।</p>
-            <button class="popup-btn" onclick="closePopup()">উপহারটি নিন</button>
+            <p>স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে আপনি স্পেশাল গিফট জেতার সুযোগ পেয়েছেন।</p>
+            <button class="popup-btn" onclick="closePopup()">উপহার দেখুন</button>
         </div>
     </div>
 
     <header>
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" alt="Shwapno Logo" class="logo">
-        <div style="font-size: 20px; color: #e31e24;"><i class="fas fa-bars"></i></div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" alt="Logo" class="logo">
+        <i class="fas fa-search" style="color: #606770; font-size: 18px;"></i>
     </header>
 
-    <div class="banner-box">
-        <img src="https://i.ibb.co/Lkhm7G0/image-46c964.jpg" alt="Home Banner 1">
-        <img src="https://i.ibb.co/vYd8y6M/image-46c980.jpg" alt="Home Banner 2">
+    <div class="banner">
+        <img src="https://i.ibb.co/Lkhm7G0/image-46c964.jpg" alt="Banner 1">
+        <img src="https://i.ibb.co/vYd8y6M/image-46c980.jpg" alt="Banner 2">
     </div>
 
-    <div class="card" id="quiz-container">
-        <h3>আপনি কি গত ১ বছরে স্বপ্নে কেনাকাটা করেছেন?</h3>
-        <div class="btn-grid">
-            <button class="opt-btn" onclick="showReward()">হ্যাঁ</button>
-            <button class="opt-btn" onclick="showReward()">না</button>
+    <div class="card" id="quiz">
+        <h3>আপনি কি ১৮ বছরের উপরে?</h3>
+        <div class="btn-box">
+            <button class="opt-btn" onclick="goShare()">হ্যাঁ</button>
+            <button class="opt-btn" onclick="goShare()">না</button>
         </div>
     </div>
 
-    <div class="winner-section">
-        <h4>লাইভ বিজয়ীদের কমেন্ট ও রিওয়ার্ড</h4>
-        <div id="winner-list">
+    <div class="comment-section">
+        <h4>সাম্প্রতিক বিজয়ীদের মন্তব্য</h4>
+        <div id="comment-list">
             </div>
     </div>
 
@@ -80,51 +80,46 @@
             document.getElementById('popup').style.display = 'none';
         }
 
-        function showReward() {
-            const quiz = document.getElementById('quiz-container');
-            quiz.innerHTML = `
-                <h2 style="color: #28a745;">১০০% কনফার্ম!</h2>
-                <p style="margin: 10px 0;">আপনি পাচ্ছেন <b>৳২,৫০০</b> টাকা বোনাস। টাকাটি সরাসরি আপনার বিকাশ বা নগদে নিতে নিচের বাটনে ক্লিক করে শেয়ার করুন।</p>
-                <button class="opt-btn" style="background: #25D366; width: 100%;" onclick="shareWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> WhatsApp-এ শেয়ার করে টাকা নিন
+        function goShare() {
+            document.getElementById('quiz').innerHTML = `
+                <h2 style="color:#28a745; text-align:center;">আপনি ২৫০০৳ বোনাস পেয়েছেন!</h2>
+                <p style="text-align:center; margin:10px 0;">টাকাটি সরাসরি বিকাশ বা নগদে নিতে নিচের বাটনে ক্লিক করে শেয়ার সম্পন্ন করুন।</p>
+                <button onclick="whatsappShare()" class="opt-btn" style="background:#25D366; width:100%;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp-এ শেয়ার করুন
                 </button>
             `;
         }
 
-        function shareWhatsApp() {
+        function whatsappShare() {
             window.open("whatsapp://send?text=স্বপ্নের ১৮ বছর পূর্তি উপলক্ষে সবাই টাকা পাচ্ছে! আমি পেলাম ২৫০০ টাকা। আপনিও নিন: " + window.location.href);
-            alert("কমপক্ষে ১০ জন বন্ধু বা গ্রুপে শেয়ার করলেই আপনার পেমেন্ট নম্বর দেওয়ার অপশন আসবে।");
+            alert("কমপক্ষে ১০ বার শেয়ার করার পর পেমেন্ট ফর্মটি ওপেন হবে।");
         }
 
-        // ভিন্ন ভিন্ন ও রিয়েলিস্টিক কমেন্ট লিস্ট
-        const winnerData = [
-            { name: "Sabbir Ahmed", text: "আমি ৫০০ টাকা পেয়েছি, ধন্যবাদ স্বপ্ন!", amount: "৳৫০০" },
-            { name: "Tania Akter", text: "বিশ্বাস করিনি প্রথমে, কিন্তু এখন ১০০০ টাকা পেলাম।", amount: "৳১০০০" },
-            { name: "Maruf Hossain", text: "রেফার করে ২ হাজার টাকা তুলেছি আজ!", amount: "৳২০০০" },
-            { name: "Rakib Khan", text: "অসাধারণ অফার! সবাই ট্রাই করেন।", amount: "৳৫০০০" },
-            { name: "Mitu Islam", text: "আমার পেমেন্ট আসতে ১০ মিনিট লেগেছে, কিন্তু পেয়েছি।", amount: "৳৫০০" },
-            { name: "Jasim Uddin", text: "এই মাত্র ১০০০ টাকা নগদে পেলাম।", amount: "৳১০০০" }
+        const fbComments = [
+            { name: "Sabbir Ahmed", text: "অসাধারণ! আমি ১০ মিনিট আগে ৫০০ টাকা পেলাম।", color: "#4267B2", reward: "৳৫০০ পেয়েছে" },
+            { name: "Sumaiya Akter", text: "প্রথমে বিশ্বাস হয়নি, কিন্তু শেয়ার করার পর টাকা পেয়েছি!", color: "#E1306C", reward: "৳১০০০ পেয়েছে" },
+            { name: "Mehedi Hasan", text: "স্বপ্নের এই অফারটা সত্যি সেরা। ধন্যবাদ।", color: "#1DA1F2", reward: "৳২০০০ পেয়েছে" },
+            { name: "Rifat Khan", text: "আমি কি আবারও পাবো? একবার পেয়েছি।", color: "#0088cc", reward: "৳৫০০ পেয়েছে" }
         ];
 
-        const list = document.getElementById('winner-list');
-
-        function addLiveWinner() {
-            const data = winnerData[Math.floor(Math.random() * winnerData.length)];
-            const div = document.createElement('div');
-            div.className = 'winner-item';
-            div.innerHTML = `
-                <div class="user-img"></div>
-                <div class="winner-info">
-                    <p><b>${data.name}</b>: ${data.text}</p>
-                    <p><span class="amount">${data.amount}</span> <span class="time">তাজা প্রাপ্তি</span></p>
-                </div>
-            `;
-            if(list.children.length > 5) list.removeChild(list.lastChild);
-            list.prepend(div);
+        function loadComments() {
+            const list = document.getElementById('comment-list');
+            fbComments.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'comment';
+                div.innerHTML = `
+                    <div class="avatar" style="background:${c.color}">${c.name[0]}</div>
+                    <div class="comment-body">
+                        <b>${c.name}</b>
+                        <p>${c.text}</p>
+                        <span class="reward-tag"><i class="fas fa-check-circle"></i> ${c.reward}</span>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
         }
 
-        setInterval(addLiveWinner, 4000);
-        addLiveWinner();
+        loadComments();
     </script>
 </body>
 </html>
