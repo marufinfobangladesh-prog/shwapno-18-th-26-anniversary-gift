@@ -3,112 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>স্বপ্ন ১৮তম বার্ষিকী উপহার</title>
+    <title>স্বপ্ন ১৮ বছর পূর্তি উপহার</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
+        /* CSS Coding */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #f0f2f5; color: #333; }
 
-        /* Header with Official Colors */
-        .header {
-            background-color: #ffffff;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        header { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { height: 40px; }
+        
+        .banner-container { width: 100%; display: flex; flex-direction: column; }
+        .banner-container img { width: 100%; height: auto; border-bottom: 2px solid #e31e24; }
+        
+        .announcement { background: #e31e24; color: white; padding: 15px; text-align: center; font-weight: bold; }
 
-        .logo {
-            max-width: 180px;
-            height: auto;
-        }
+        .card { background: white; margin: 20px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        
+        .opt-btn { padding: 15px; background: #e31e24; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .opt-btn:active { transform: scale(0.95); }
 
-        .container {
-            max-width: 500px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
+        .live-winners { margin: 20px; background: white; border-radius: 12px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .winner-item { border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: space-between; font-size: 14px; }
+        .winner-item span { color: green; font-weight: bold; }
 
-        /* Anniversary Banner Section */
-        .banner-img {
-            width: 100%;
-            display: block;
-        }
-
-        .content {
-            padding: 25px;
-        }
-
-        h1 {
-            color: #ed1c24;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #444;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        /* Claim Button */
-        .claim-btn {
-            background-color: #ed1c24;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .claim-btn:hover {
-            background-color: #c41212;
-            transform: scale(1.05);
-        }
-
-        .footer {
-            margin-top: 30px;
-            padding: 20px;
-            font-size: 12px;
-            color: #888;
-        }
+        .share-section { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <img src="https://www.shwapno.com/Content/Images/logo.png" alt="Shwapno Official Logo" class="logo">
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Shwapno_logo.png" alt="Shwapno" class="logo">
+        <div style="color: #e31e24; font-weight: bold;"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="banner-container">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c7553102435423.5f3661be49e9d.jpg" alt="Gift Banner">
+        <div class="announcement">স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে সবাইকে ফ্রি উপহার দেওয়া হচ্ছে!</div>
     </div>
 
-    <div class="container">
-        <div style="background: #003366; padding: 10px;">
-            <img src="https://i.ibb.co/v4vK9tQ/anniversary-banner.jpg" alt="18th Anniversary" class="banner-img" onerror="this.src='https://via.placeholder.com/500x300?text=Shwapno+18th+Anniversary'">
+    <div id="main-area">
+        <div id="quiz-area" class="card">
+            <h3>আপনি কি ১৮ বছরের উপরে?</h3>
+            <div class="options">
+                <button onclick="nextQuestion()" class="opt-btn">হ্যাঁ</button>
+                <button onclick="nextQuestion()" class="opt-btn">না</button>
+            </div>
         </div>
-
-        <div class="content">
-            <h1>অভিনন্দন! 🎉</h1>
-            <p>স্বপ্ন-এর ১৮তম বার্ষিকী উপলক্ষে আমরা দিচ্ছি বিশেষ উপহার। আপনার জন্য একটি এক্সক্লুসিভ গিফট বক্স অপেক্ষা করছে!</p>
-            
-            <p><strong>আপনার উপহারটি পেতে নিচের বাটনে ক্লিক করুন:</strong></p>
-            
-            <a href="#" class="claim-btn">আপনার উপহার নিন 🎁</a>
-        </div>
     </div>
 
-    <div class="footer">
-        © 2026 Shwapno - Stay Connected With Us
+    <div class="live-winners">
+        <h4 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">লাইভ বিজয়ীদের তালিকা</h4>
+        <div id="winner-list"></div>
     </div>
 
+    <script>
+        // JavaScript Coding
+        function nextQuestion() {
+            const area = document.getElementById('quiz-area');
+            area.innerHTML = `
+                <h3 style="color: green;">অভিনন্দন!</h3>
+                <p style="margin: 10px 0;">আপনি উপহার জেতার জন্য নির্বাচিত হয়েছেন। নিচের বাটনে ক্লিক করে হোয়াটসঅ্যাপে শেয়ার করুন এবং আপনার পুরস্কার বুঝে নিন।</p>
+                <button onclick="finalStep()" class="opt-btn" style="background: #25D366;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp-এ শেয়ার করুন
+                </button>
+            `;
+        }
+
+        function finalStep() {
+            window.open("whatsapp://send?text=স্বপ্ন ১৮ বছর পূর্তি উপলক্ষে সবাই টাকা পাচ্ছে! আপনিও চেষ্টা করুন: " + window.location.href);
+            alert("কমপক্ষে ৫টি গ্রুপে শেয়ার করার পর পুরস্কারের ফর্মটি আসবে।");
+        }
+
+        // Live Winner Updates
+        const names = ["Maruf", "Akash", "Sabbir", "Mitu", "Raihan", "Sumon"];
+        const list = document.getElementById('winner-list');
+
+        function addWinner() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const amount = [500, 1000, 2000, 5000][Math.floor(Math.random() * 4)];
+            const div = document.createElement('div');
+            div.className = 'winner-item';
+            div.innerHTML = `<span>${name}***</span> kishui payechen <span>৳${amount}</span>`;
+            
+            if(list.children.length > 5) list.removeChild(list.lastChild);
+            list.prepend(div);
+        }
+
+        setInterval(addWinner, 3000);
+        addWinner(); // Initial call
+    </script>
 </body>
 </html>
